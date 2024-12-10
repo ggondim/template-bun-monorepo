@@ -1,29 +1,47 @@
 import type { BuildConfig } from 'bun'
 import dts from 'bun-plugin-dts'
+import path from 'path';
 import { parseArgs } from 'util';
 
-// console.log(`cwd: `, process.cwd());
+console.log(`cwd: `, process.cwd());
+console.log(`dir: `, __dirname);
 
 const { values } = parseArgs({
   args: Bun.argv,
   options: {
-    pkg: {
+    config: {
       type: 'string',
-      alias: 'p'
+      alias: 'c'
+    },
+    in: {
+      type: 'string',
+      alias: 'i'
+    },
+    out: {
+      type: 'string',
+      alias: 'o'
     },
   },
-  strict: true,
   allowPositionals: true,
 });
 
-// console.log(`package: `, values.pkg);
+let input: string;
+let outdir: string;
 
-const dir = values.pkg?.startsWith('.') ? values.pkg : `./packages/${values.pkg}`;
-// console.log(`dir: `, dir);
+if (values.config) {
+  const config = await import(path.resolve(process.cwd(), values.config));
+  input = config.compilerOptions.rootDir;
+  outdir = config.compilerOptions.outDir;
+} else {
+  input = values.in ?? './index.ts';
+  outdir = values.out ?? './dist';
+}
+
+const entrypoint = input.indexOf(".ts") !== -1 ? input : `${input}/index.ts`;
 
 const defaultBuildConfig: BuildConfig = {
-  entrypoints: [`${dir}/index.ts`],
-  outdir: `${dir}/dist`
+  entrypoints: [entrypoint],
+  outdir,
 };
 
 await Promise.all([

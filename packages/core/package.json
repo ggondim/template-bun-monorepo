@@ -31,10 +31,11 @@
     "url": ""
   },
   "scripts": {
-    "lint:tsc": "echo \"Linting...\" && tsc --noEmit && echo \"Done.\"",
-    "build:bun": "echo \"Building...\" && bun run ../../scripts/build.ts --pkg . && echo \"Done.\"",
-    "build:clean": "echo \"Cleaning...\" && rm -rf dist && echo \"Done.\"",
-    "build": "bun run build:clean && bun run build:bun",
+    "lint:tsc": "tsc --noEmit",
+    "barrels": "bunx barrelsby -D -d ./src",
+    "build:bun": "bun run ../../scripts/build.ts --config ./tsconfig.json",
+    "build:clean": "rm -rf dist",
+    "build": "(bun run build:clean & bun run barrels & wait) && bun run build:bun",
     "prepublish": "bun run build"
   },
   "dependencies": {
