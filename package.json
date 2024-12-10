@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/bun": "*",
     "barrelsby": "^2.8.1",
+    "bun": "^1.1.38",
     "bun-plugin-dts": "^0.3.0",
     "husky": "^9.1.7",
     "tsc-files": "^1.1.4",

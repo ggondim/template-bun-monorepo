@@ -1,0 +1,30 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "type": "module",
+  "module": "src/index.ts",
+  "description": "Core package",
+  "keywords": [
+    "core"
+  ],
+  "author": {
+    "name": "Gustavo Gondim",
+    "email": ""
+  },
+  "license": "MIT",
+  "homepage": "",
+  "bugs": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "lint:tsc": "tsc --noEmit"
+  },
+  "dependencies": {
+    "core": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

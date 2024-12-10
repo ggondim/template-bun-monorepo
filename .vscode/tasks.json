@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "killport",
+      "type": "shell",
+      "command": "lsof -t -i:3000 | xargs -r kill -9",
+      "problemMatcher": []
+    }
+  ]
+}
