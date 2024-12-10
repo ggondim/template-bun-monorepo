@@ -6,12 +6,15 @@
   ],
   "scripts": {
     "build:clean": "rm -rf packages/*/dist",
-    "clean": "rm -rf node_modules packages/*/node_modules"
+    "clean": "rm -rf node_modules packages/*/node_modules",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/bun": "*",
     "barrelsby": "^2.8.1",
     "bun-plugin-dts": "^0.3.0",
+    "husky": "^9.1.7",
+    "tsc-files": "^1.1.4",
     "typescript": "^5.7.2"
   }
 }

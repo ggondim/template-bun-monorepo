@@ -1,0 +1,4 @@
+[push]
+  followTags = true
+
+# need to run `git config --local include.path ../.gitconfig` in root

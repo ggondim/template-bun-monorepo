@@ -1,12 +1,14 @@
 # TO-DO checklist
 
-- [ ] Set up tsconfig properly
+- [X] Set up tsconfig properly
 - [X] Implement barrelsby to generate export files
 - [ ] Set up Biome
-- [ ] Organize documentation files
 - [ ] Open Source README template
-- [ ] Set up husky
-- [ ] Set up lint-staged
+- [X] Set up husky
+- [ ] Set up lint-staged (is it necessary with biome?)
 - [ ] Set up commitlint
 - [ ] Set up semantic-release/conventional commits/commitzen/standard-version
 - [ ] Design tests for each package using Bun
+- [ ] Set up vscode debug config files
+- [X] Set up vsocde default settings
+- [X] Set .editorconfig, .gitattributes, etc.
