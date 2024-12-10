@@ -1,0 +1,16 @@
+{
+  "name": "template-bun-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:clean": "rm -rf packages/*/dist",
+    "clean": "rm -rf node_modules packages/*/node_modules"
+  },
+  "devDependencies": {
+    "@types/bun": "*",
+    "bun-plugin-dts": "^0.3.0",
+    "typescript": "^5.7.2"
+  }
+}
