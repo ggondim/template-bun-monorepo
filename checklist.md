@@ -9,6 +9,6 @@
 - [ ] Set up commitlint
 - [ ] Set up semantic-release/conventional commits/commitzen/standard-version
 - [ ] Design tests for each package using Bun
-- [ ] Set up vscode debug config files
+- [X] Set up vscode debug config files
 - [X] Set up vsocde default settings
 - [X] Set .editorconfig, .gitattributes, etc.
